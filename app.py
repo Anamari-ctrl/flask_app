@@ -1,5 +1,7 @@
+import datetime
+
 from markupsafe import escape
-from flask import Flask, abort
+from flask import Flask, abort, render_template
 
 app = Flask(__name__)
 
@@ -7,8 +9,7 @@ app = Flask(__name__)
 @app.route('/')
 @app.route('/index/')
 def hello():
-    return '<h1>Kako je bilo na tabornikih?</h1>'
-
+    return render_template('index.html', utc_now=datetime.datetime.utcnow())
 
 @app.route('/about/')
 def about():
