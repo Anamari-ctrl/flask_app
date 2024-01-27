@@ -13,8 +13,7 @@ def hello():
 
 @app.route('/about/')
 def about():
-    return '<h3>This is a Flask web application.</h3>'
-
+    return render_template('about.html')
 
 @app.route('/capitalize/<word>/')
 def capitalize(word):
